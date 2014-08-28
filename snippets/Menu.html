@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Arkajen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+    <link href="bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Menu.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap-3.1.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" >
+      $('#myCarousel').carousel({
+  interval: 0
+})
+
+$('.carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  for (var i=0;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+        next = $(this).siblings(':first');
+    }
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+   
+   function loadUCSDirectorCatalogs () {
+       //$('#main-content-iframe').attr('src', "VMProvisionForm.html");
+   }
+
+   function loadUCSDirectorReports () {
+       $('#main-content-iframe').attr('src', "serviceRequestList.html");
+   }
+
+   function loadUCSDirectorServices () {
+       $('#main-content-iframe').attr('src', "list.html");
+   }
+    
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="navbar-wrapper container">
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="navbar-header">
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+			<div class="logo">
+				<img src="../img/logo.png" onclick="www.google.com">
+			</div>
+			
+            </div>
+            <div class="navbar-collapse collapse">
+                
+           
+            <ul class="nav navbar-nav pull-right">
+                <li ><a href="../register.php">Register User</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="../logout.php">Log Out</a></li>
+               
+            </ul>
+
+        </div>
+    </div>
+</div>
+    <!-- /container -->
+</div>
+<!-- /navbar wrapper -->
+
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-folder-close"></span> Home</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="#"><span class="glyphicon glyphicon-flash text-success"></span> News</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#"><span class="glyphicon glyphicon-file text-info"></span> About</a>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-user"></span> Profile</a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tbody><tr>
+                                    <td>
+                                        <a href="#">Change Password</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#">Notifications</a> <span class="label label-info">9</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#" class="text-danger"><span class="glyphicon glyphicon-trash text-danger"></span> Delete Account</a>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th"></span> Services</a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tbody><tr>
+                                    <td>
+                                        <a href="#" onclick="loadUCSDirectorCatalogs()">Register Product</a> <span class="label label-success">$ 42</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#">Register Invoice</a> <span class="label label-success">$ 28</span>
+                                    </td>
+                                </tr>
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                            <span class="glyphicon glyphicon-file"></span> Reports</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="#" onclick="loadUCSDirectorReports()"><span class="glyphicon glyphicon-user"></span>Service Requests</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#" onclick="loadUCSDirectorServices()"><span class="glyphicon glyphicon-tasks"></span> Products</a>
+                                    </td>
+                                </tr>
+                                
+                            </tbody></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 main-content">
+
+<iframe id="main-content-iframe" src="carousel.html" seamless style="border: 0; width: 100%; height: 100%"></iframe>
+
+</div>
+</div>
+
+
+ 
+    
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

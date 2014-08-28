@@ -38,7 +38,7 @@
             unset($row['salt']); 
             unset($row['password']); 
             $_SESSION['user'] = $row;  
-            header("Location: snippets/Menu.html"); 
+            header("Location: secret.php"); 
             die("Redirecting to: secret.php"); 
         } 
         else{ 
@@ -47,14 +47,17 @@
         } 
     } 
 ?> 
-
+<!-- Author: Michael Milstead / Mode87.com
+     for Untame.net
+     Bootstrap Tutorial, 2013
+-->
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-	<link rel="icon" type="image/png" href="img/logo.png">
-    <title>Arkajen</title>
-    <meta name="description" content="Vzure Internal">
+    <title>Bootstrap Tutorial</title>
+    <meta name="description" content="Bootstrap Tab + Fixed Sidebar Tutorial with HTML5 / CSS3 / JavaScript">
+    <meta name="author" content="Untame.net">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="assets/bootstrap.min.js"></script>
@@ -71,15 +74,12 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-	<div class="logo">
-				<img src="img/logo.png" onclick="www.google.com">
-			</div>
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </a></br>
-	  <a class="brand">Welcome : Arkajen Internal Application</a>
+      </a>
+      <a class="brand">PHP Signup + Bootstrap Example</a>
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <li><a href="register.php">Register</a></li>
@@ -102,16 +102,19 @@
       </div>
     </div>
   </div>
-  <div class="container hero-unit">
+</div>
+
+<div class="container hero-unit">
+    <h1>There's secret content to be had within!</h1>
+    <p>But you can't access it just yet! You'll need to log in first. Use Bootstrap's nifty navbar dropdown to access the form.</p>
+    <h2>There are 2 ways you can log in:</h2>
     <ul>
-     <li>Register or use the default credentials:<br />
-            <strong>username:</strong> superadmin<br />
-            <strong>password:</strong> superadmin<br /></li>
+        <li>Try out your own user + password with the <strong>Register</strong> button in the navbar.</li>
+        <li>Use the default credentials to save time:<br />
+            <strong>user:</strong> admin<br />
+            <strong>pass:</strong> password<br /></li>
     </ul>
 </div>
-</div>
-
-
 
 </body>
 </html>
