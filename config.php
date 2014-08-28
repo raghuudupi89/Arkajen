@@ -3,7 +3,7 @@
     // These variables define the connection information for your MySQL database 
     $username = "adminwTpWbVX"; 
     $password = "1yE-f4pdfBVv"; 
-    $host = "127.7.151.2:3306"; 
+    $host = "127.7.151.2"; 
     $dbname = "phparkajen"; 
     
     $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'); 
