@@ -1,0 +1,39 @@
+/* CSS used here will be applied after bootstrap.css */
+
+.panel a {
+  color:#777;
+}
+
+.panel a:hover {
+ text-decoration:none;
+ color:#222;
+}
+
+.panel .table td {
+ border-color: #f3f3f3;
+}
+
+.carousel-inner .active.left { left: -25%; }
+.carousel-inner .next        { left:  25%; }
+.carousel-inner .prev		 { left: -25%; }
+.carousel-control 			 { width:  4%; }
+.carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+
+.main-content {
+	height: 40%;
+}
+
+.gallary{
+width: 250px;
+height: 250px;
+
+    /* For any browser that can't create a gradient  */
+    background-color: #EFEFEF;
+    /*//mozilla*/
+    background: -moz-linear-gradient(top, #efefef, #FFF);
+    /* Chrome/Safari     */
+    background: -webkit-gradient(linear, left top, left bottom, from(#EFEFEF), to(#FFF));
+    /*IE 6/7 */ filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#EFEFEF',EndColorStr='#FFF');
+    /*IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFEFEF, endColorstr=#FFF)";
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+     <link href="bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Menu.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap-3.1.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" >
+	    $(document).ready(function() {
+
+		var vCPUCountLimit=8, maxMemorySize=8192, maxDiskSize=256;	
+		   	
+		for(var vcpu=1; vcpu<=vCPUCountLimit; vcpu++) {
+			$('#vcpu-count').append($("<option></option>").attr("value",vcpu).text(vcpu));  		
+		}  	
+
+		for(var memSize=512; memSize<=maxMemorySize; memSize*=2) {
+			$('#memory-size').append($("<option></option>").attr("value",memSize).text(memSize));  		
+		}
+
+		for(var diskSize=16; diskSize<maxDiskSize; diskSize*=2) {
+			$('#disk-size').append($("<option></option>").attr("value",diskSize).text(diskSize));  		
+		}		
+		
+		$( "#server-type" ).change(function() {
+		  	var serverType = $( "#server-type option:selected" ).text();
+
+		  	$('#vcpu-count').prop('disabled', true);
+			$('#memory-size').prop('disabled', true);
+			$('#disk-size').prop('disabled', true);
+		  		
+		  	switch (serverType) {
+				case "CentOS Gold": 
+					$('#vcpu-count').val("4");$('#memory-size').val("2048");$('#disk-size').val("64");
+				    break;
+				case "CentOS Silver": 
+				  	$('#vcpu-count').val("3");$('#memory-size').val("1024");$('#disk-size').val("32");
+				    break; 
+				case "CentOS Bronze": 
+				  	$('#vcpu-count').val("2");$('#memory-size').val("512");$('#disk-size').val("16");
+				    break;  
+				case "Windows 2003": 
+				  	$('#vcpu-count').val("4");$('#memory-size').val("2048");$('#disk-size').val("64");
+				    break;  
+				default:
+				    $('#vcpu-count').prop('disabled', false);
+			  		$('#memory-size').prop('disabled', false);
+			  		$('#disk-size').prop('disabled', false);
+		  	}	
+		});
+
+	}); /*End of document - ready function */
+	</script> 
+	
+	<div class="thumbnail span3">
+      						<a href="#x" class="thumbnail"><img  id="qqq" src="http://placehold.it/250x250" alt="Image" style="max-width:100%;" href="#modal-id" data-toggle="modal"/></a>
+      						<h4>VM Provision</h4><p>Invokes Cisco UCS Director workflow</p>
+    					</div>
+	<div id="targetid"></div>
+
+	<div class="modal fade" id="modal-id" role="dialog">
+        <div class="modal-dialog">
+             <div class="modal-content span6" style="float:none; margin:0 auto">
+                  <div class="modal-header"><h3>VM Provision</h3></div>
+                  
+                  <form role="form-horizontal">
+                  <fieldset>
+                  <div class="form-group">
+					  
+					  <div><label>Select Server</label>
+					<select class="selectpicker" id="server-type">
+				    	<optgroup label="Standard">
+				      		<option>CentOS Gold</option>
+				      		<option>CentOS Silver</option>
+				      		<option>CentOS Bronze</option>
+				      		<option>Windows 2003</option>
+				    	</optgroup>
+				    	<optgroup label="Customize">
+				      		<option selected>CentOS</option>
+				      		<option>Windows</option>
+				    	</optgroup>
+				  	</select>
+				</div>
+					  
+				  </div>
+                  </fieldset>
+				<div><label>Select Server</label>
+					<select class="selectpicker" id="server-type">
+				    	<optgroup label="Standard">
+				      		<option>CentOS Gold</option>
+				      		<option>CentOS Silver</option>
+				      		<option>CentOS Bronze</option>
+				      		<option>Windows 2003</option>
+				    	</optgroup>
+				    	<optgroup label="Customize">
+				      		<option selected>CentOS</option>
+				      		<option>Windows</option>
+				    	</optgroup>
+				  	</select>
+				</div>
+				<div><label>vCPU Count</label>
+					<select class="selectpicker" id="vcpu-count"></select>
+				</div>
+				<div><label>Memory Size(MB)</label>
+					<select class="selectpicker" id="memory-size"></select>
+				</div>
+				<div><label>Disk Size(GB)</label>
+					<select class="selectpicker" id="disk-size"></select>
+				</div>
+				<p class="help-block">Minimum disk size required is 16GB</p>
+			</form>
+        </div>
+        <div class="pull-right">
+       		<button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </div>
+   </div>
+
+</body>
+</html>
